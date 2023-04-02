@@ -53,16 +53,17 @@ class MainActivity : ComponentActivity() {
                     height = Dimension.value(100.dp)
                 }
             }
+
             ConstraintLayout(constraintSet = constraints, modifier = Modifier.fillMaxSize()) {
-                val itemsTest = listOf("Wiener Schnitzel", "Gianni's Ljubljanska", "Gorizia's Rose", "Gnocchi al Cinghiale", "Prosciutto Cotto e Kren", "Tiramisù", "Gubana", "Kipfel", "Salame con Aceto", "Repa", "Crauti", "Frittata alle Erbe", "Mortadella", "Brovada e Muset", "Gulash")
                 val scrollState = rememberScrollState()
                 Box(
                     modifier = Modifier
                         .background(Color.Green)
                         .layoutId("greenbox")
                 )
+                val foodListItems = listOf("Wiener Schnitzel", "Gianni's Ljubljanska", "Gorizia's Rose", "Gnocchi al Cinghiale", "Prosciutto Cotto e Kren", "Tiramisù", "Gubana", "Kipfel", "Salame con Aceto", "Repa", "Crauti", "Frittata alle Erbe", "Mortadella", "Brovada e Muset", "Gulash")
                 Column(modifier = Modifier.verticalScroll(scrollState).layoutId("food_list")) {
-                    itemsTest.forEach {
+                    foodListItems.forEach {
                         Card(modifier = Modifier
                             .fillMaxWidth()){
                             Box(modifier = Modifier.padding(16.dp)){
